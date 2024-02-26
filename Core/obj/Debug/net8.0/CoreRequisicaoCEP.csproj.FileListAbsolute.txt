@@ -1,0 +1,12 @@
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\bin\Debug\net8.0\CoreRequisicaoCEP.deps.json
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\bin\Debug\net8.0\CoreRequisicaoCEP.dll
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\bin\Debug\net8.0\CoreRequisicaoCEP.pdb
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.csproj.AssemblyReference.cache
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.AssemblyInfoInputs.cache
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.AssemblyInfo.cs
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.csproj.CoreCompileInputs.cache
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.dll
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\refint\CoreRequisicaoCEP.dll
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\CoreRequisicaoCEP.pdb
+C:\Working\PosTech\TechChallenge\Fase3\RequisicaoCEP\RequisicaoCEP\Core\obj\Debug\net8.0\ref\CoreRequisicaoCEP.dll

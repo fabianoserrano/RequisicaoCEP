@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "Produtor\\APIRequisicaoCEP.csproj",
+        "Action": "Start"
+      },
+      {
+        "Name": "Consumidor\\ServiceRequisicaoCEP.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

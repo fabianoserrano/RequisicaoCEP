@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "APIRequisicaoCEP.Controllers.RequisicaoCepController",
+    "Method": "Post",
+    "RelativePath": "requisicaocep",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dtoCreate",
+        "Type": "APIRequisicaoCEP.Dtos.RequisicaoCepDtoCreate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

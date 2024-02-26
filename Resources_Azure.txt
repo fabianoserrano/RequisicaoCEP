@@ -1,0 +1,151 @@
+- Resource groups -> Create
+Resource group: rg-requisicaocep
+Region: (South America) Brazil South
+- Review + create -> Create
+
+----------
+
+- App Configuration -> Create
+Resource group: {rg-requisicaocep}
+Location: Brazil South
+Resource name cf-equisicaocep
+Pricing tier: Free
+- Review + create -> Create
+
+- Go to resource
+
+- Configuration explorer -> Create -> Key-value
+Key: kv-filarequisicaocep
+Value: filarequisicaocep
+- Apply
+
+- Access keys -> Values -> Primary key -> Connection string
+{APIRequisicaoCEP -> Program.cs -> AddAzureAppConfiguration}
+{ServiceRequisicaoCEP -> Program.cs -> AddAzureAppConfiguration}
+
+----------
+
+- Service Bus -> Create
+Resource group: {rg-requisicaocep}
+Namespace name: sb-requisicaocep
+Location: Brazil South
+Pricing tier: Standard
+- Review + create -> Create
+
+- Go to resource
+
+- Shared Access Policies -> RootManageSharedAccessKey -> Primary Connection String
+{Key vaults}
+
+----------
+
+Sql Database -> Create
+Resource group: {rg-requisicaocep}
+Database name: db-requisicaocep
+Server: {Create new}
+Server name: srv-requisicaocep
+Location: Brazil South
+Authentication method: Use SQL authentication
+Server admin login: usrrequisicaocep
+Password: {senha}
+Confirm password: {senha}
+
+- OK
+Backup storage redundancy: Locally-redundant backup storage
+- Review + create -> Create
+
+- Go to resource
+
+- Set server firewall -> Select networks -> Firewall rules -> Add your client IPv4 address (???.???.???.???)
+- Save
+
+- Connection strings -> ADO.NET (SQL authentication)
+{Substituir "{your_password}"}
+{Key vaults}
+
+----------
+
+- Microsoft Entra ID -> App registrations -> New registration
+Name: app-requisicaocep
+- Register
+
+Application (client) ID
+{CoreRequisicaoCEP -> Connection.cs -> GetSecret -> clientId}
+Directory (tenant) ID
+{CoreRequisicaoCEP -> Connection.cs -> GetSecret -> tenantId}
+
+- Certificates & secrets -> Client secrets -> New client secret
+Description: sc-requisicaocepsbconnection
+Expires: 180 days
+ - Add
+
+Value
+{CoreRequisicaoCEP -> Connection.cs -> GetSecret -> clientSecret}
+
+----------
+
+- Key vaults -> Create
+Resource group: {rg-requisicaocep}
+Key vault name: kv-requisicaocep
+Region: Brazil South
+Pricing tier: Standard
+- Review + create -> Create
+
+- Go to resource
+
+Vault URI
+{CoreRequisicaoCEP -> Connection.cs -> GetSecret -> keyVaultUri}
+
+- Access control (IAM) -> Add -> Add role assignment
+Search: {Key Vault Administrator}
+- {selecionar} -> Next
+- Select members
+Search: {nome do usuário}
+- {selecionar} -> Select
+- Review + assign -> Review + assign
+
+- Access control (IAM) -> Add -> Add role assignment
+Search: {Key Vault Secrets User}
+- {selecionar} -> Next
+- Select members
+Search: {app-requisicaocep}
+- {selecionar} -> Select
+- Review + assign -> Review + assign
+
+- Secrets -> Generate/Import
+Name: sc-requisicaocepsbconnection
+Secret value: {Service Bus ... Primary Connection String}
+- Create
+
+Name
+{CoreRequisicaoCEP -> Connection.cs -> GetServiceBusConnection}
+
+- Secrets -> Generate/Import
+Name: sc-requisicaocepsqlconnection
+Secret value: {Sql Database ... Connection strings}
+- Create
+
+Name
+{CoreRequisicaoCEP -> Connection.cs -> GetServiceSQLServerConnection}
+
+----------
+
+Application Insights -> Create
+Resource group: {rg-requisicaocep}
+Name: ai-requisicaocep
+Region: (South America) Brazil South
+- Review + create -> Create
+
+- Go to resource
+
+Instrumentation Key
+{APIRequisicaoCEP -> appsettings.json -> InstrumentationKey}
+
+***** Live metrics *****
+
+--------------------------------------------------
+
+Visual Studio -> NuGet Package Manager -> Package Manager Console
+Default project: ServiceRequisicaoCEP
+EntityFrameworkCore\Add-Migration Inicial
+EntityFrameworkCore\Update-Database
